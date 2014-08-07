@@ -18,18 +18,14 @@ var Yld = {
 
 ## Functions
 
+Function declarations GOOD, better than `var foo = func...` as they enable you to order your code from the highest level (big picture) to lowest level (tiny boring helpers) for more readable code. And they have proper names for stack traces, yay!
+
 ```javascript
 demonstrateFunctions("Isn't it great that I can call this above the declaration in the same scope?");
 
-// function declarations GOOD, better than `var foo = func...`, 
-// they enable you to order your code
-// from the highest level (big picture) to lowest level (tiny boring helpers) which is
-// much more readable. and they have proper names for stack traces, yay!
 function demonstrateFunctions(msg) {
   console.log(msg);
 }
-
-
 ```
 
 ## Comparisons
