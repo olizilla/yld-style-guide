@@ -6,12 +6,14 @@ var beConsistentFfs = "TitleCase Acronyms, don't do a XMLHttpRequest";
 
 var oneVarPerLine = "it keeps git history clean, and that's important";
 
-var Yld = { // object literals, not `new Object` obvs
-  type: "company", // don't needlessly 'quote' keys
-  location: "everywhere!", // trailing commas are good: less git noise when adding/rearranging keys. we write node so it has no legacy issues
-}; // use semi-colons. You know how to omit them, but people maintaing your code might not :)
-
-var technologies = ["node", "docker", "ansible", "erlang?!"]; // not `new Array`, obvs
+var Yld = {
+  // needlessly quoted keys BAD
+  type: "company",
+  // trailing commas are GOOD: less git noise when adding/rearranging keys.
+  //  has no legacy issues we write node so it
+  location: "everywhere!", 
+// semi-colons GOOD. You know how to omit them, but people maintaining your code might not :)
+};
 ```
 
 ## Functions
@@ -19,12 +21,15 @@ var technologies = ["node", "docker", "ansible", "erlang?!"]; // not `new Array`
 ```javascript
 demonstrateFunctions("Isn't it great that I can call this above the declaration in the same scope?");
 
-// prefer function declarations where possible, they enable you to order your code
+// function declarations GOOD, better than `var foo = func...`, 
+// they enable you to order your code
 // from the highest level (big picture) to lowest level (tiny boring helpers) which is
 // much more readable. and they have proper names for stack traces, yay!
 function demonstrateFunctions(msg) {
   console.log(msg);
 }
+
+
 ```
 
 ## Comparisons
@@ -32,7 +37,8 @@ function demonstrateFunctions(msg) {
 ```javascript
 var x = null;
 
-var notNullOrUndefined = x == null; // this is the only good use for `==`, avoiding the ugly `x === undefined || x === null`
+// this is the only good use for `==`, avoiding the ugly `x === undefined || x === null`
+var notNullOrUndefined = x == null; 
 
 if(x === 0) {
   // otherwise stick to triple equals, and everyone will know what you're trying to do!
@@ -43,13 +49,15 @@ if(x === 0) {
 
 ```javascript
 function returnEarlyIfPossible() {
-  // suggest people always use braces with control-flow. Noisier but it does make things explicit.
+  // suggest people always use braces with control-flow.
+  // Noisy but explicit.
   if(x) {
     return true;
   }
 }
 
-// please never ever use logical operators for control flow! e.g `x && x.explode()`
+// BAD please never ever use logical operators for control flow
+x && x.explode();
 ```
 
 ## Object-orientation
