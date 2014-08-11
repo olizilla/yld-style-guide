@@ -94,3 +94,17 @@ sarah.ranTraining();
 Keep work and orchestration separate. Test work separately.
 
 If things get really complex, use `async`.
+
+```javascript
+// call the error argument 'err'
+fs.readFile("/srv/foo", function(err, data) {
+  // keep the work outside of your orchestration code,
+  // now we can test `parseFile` easily and synchronously
+  var parsed = parseFile(data);
+});
+```
+
+## Modules
+
+- export only what you need, as documentation for a public API
+- if something is only exported for testing purposes, use the `_` prefix: `exports._x = x`
