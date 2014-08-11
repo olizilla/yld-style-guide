@@ -1,7 +1,7 @@
 # YLD Javascript style guide
 
 ```javascript
-var thisIsJavascript = "no camel_case please";
+var thisIsJavascript = "Identifiers should be camelCase. Avoid the_snake_case";
 var beConsistentFfs = "TitleCase Acronyms, don't do a XMLHttpRequest";
 
 var oneVarPerLine = "it keeps git history clean, and that's important";
